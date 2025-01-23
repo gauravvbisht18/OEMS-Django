@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage employees in the Office Employee Management System.">
+    <title>Remove Employee</title>
+    <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+      rel="stylesheet" 
+      integrity="sha384-wEmeIV1mKuiNp12z93zD3GfmnK6qKq6R9jE6ABrJZzUpeTChQ3X9xQJpVFuBvYvh" 
+      crossorigin="anonymous">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 1rem 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1.1rem;
+        }
+        button {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            border: none;
+            font-size: 1.25rem;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:hover {
+            box-shadow: 0 8px 20px rgba(255, 117, 140, 0.4);
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+      <h1>Remove An Employee</h1>
+      <hr>
+      <form action="/remove_emp" method="post">
+          {% csrf_token %}
+          <label for="employee">Choose Employee To Be Removed</label>
+          <select id="employee" name="employee">
+              <option value="">-- Select Employee --</option>
+              {% for emp in emps %}
+              <option value="{{ emp.id }}">{{ emp.first_name }} {{ emp.last_name }}</option>
+              {% endfor %}
+          </select>
+          <button type="submit">Remove Employee</button>
+      </form>
+  </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script 
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-QF9m5QwWwXgyv9H8h3FmcNRN9pC3lfdLRIh6wM0T6C9Ct64R1zTgoN2s5Y3eG5eD" 
+      crossorigin="anonymous"></script>
+</body>
+</html>
