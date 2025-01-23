@@ -60,7 +60,7 @@ Follow these steps to set up the project on your local machine:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/employee-management.git
+   git clone https://github.com/gauravvbisht18/OEMS-Django.git
    cd management
 2. **Apply Migrations**
    ```bash
@@ -69,15 +69,16 @@ Follow these steps to set up the project on your local machine:
 3. **Run the Development Server**
    ```bash
    python manage.py runserver
-4.**Access the Application Open your browser and navigate to http://127.0.0.1:8000/.**
+4. **Access the Application Open your browser and navigate to http://127.0.0.1:8000/.**
 
 ---
 
-## Future Enhancements-
+## Future Enhancements
 
-*Here are some ideas for future improvements:*
+Here are some ideas for future improvements:
 
-1.**Add user authentication for secure access.**
-2.**Include advanced search and filter options for employee records.**
-3.**Implement an API for external integrations.**
-4.**Add pagination for better handling of large datasets.**
+- **Add user authentication** for secure access.
+- **Include advanced search and filter options** for employee records.
+- **Implement an API** for external integrations.
+- **Add pagination** for better handling of large datasets.
+
